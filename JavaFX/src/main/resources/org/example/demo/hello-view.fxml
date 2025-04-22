@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.demo.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.demo.HelloController">
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <HBox spacing="10">
+                <Label text="Startdatum:"/>
+                <DatePicker fx:id="startDatePicker"/>
+                <Label text="Enddatum:"/>
+                <DatePicker fx:id="endDatePicker"/>
+                <Button fx:id="fetchButton" text="Daten laden" onAction="#onFetchClicked"/>
+            </HBox>
+            <HBox spacing="30">
+                <Label fx:id="gridPortionLabel" text="Grid: -"/>
+                <Label fx:id="communityDepletedLabel" text="Community: -"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tableView">
+            <columns>
+                <TableColumn fx:id="hourColumn" text="Stunde" prefWidth="180"/>
+                <TableColumn fx:id="producedColumn" text="Produziert (kWh)" prefWidth="180"/>
+                <TableColumn fx:id="usedColumn" text="Verbraucht (kWh)" prefWidth="180"/>
+                <TableColumn fx:id="gridColumn" text="Grid (kWh)" prefWidth="140"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox spacing="5">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <HBox spacing="20">
+                <Label fx:id="totalProducedLabel" text="Gesamt produziert: -" />
+                <Label fx:id="totalUsedLabel" text="Gesamt verbraucht: -" />
+                <Label fx:id="totalGridLabel" text="Gesamt Grid: -" />
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>
