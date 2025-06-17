@@ -1,12 +1,10 @@
 package com.example.api.controller;
 
 import com.example.api.model.CurrentPercentage;
-import com.example.api.model.EnergyUsage;
-import com.example.api.service.EnergyService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.api.model.EnergyHistory;
+import com.example.api.repository.CurrentPercentageRepository;
+import com.example.api.repository.EnergyHistoryRepository;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -16,33 +14,33 @@ import java.util.List;
 @RequestMapping("/energy")
 public class EnergyController {
 
-    @Autowired
-    private EnergyService energyService;
+    private final CurrentPercentageRepository currentPercentageRepository;
+    private final EnergyHistoryRepository energyHistoryRepository;
+
+    public EnergyController(CurrentPercentageRepository currentPercentageRepository,
+                            EnergyHistoryRepository energyHistoryRepository) {
+        this.currentPercentageRepository = currentPercentageRepository;
+        this.energyHistoryRepository = energyHistoryRepository;
+    }
 
     @GetMapping("/current")
-    public ResponseEntity<?> getCurrent() {
-        CurrentPercentage cp = energyService.getCurrentPercentage();
-        if (cp != null) {
-            return ResponseEntity.ok(cp);
-        } else {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-        }
+    public CurrentPercentage currentPercentage() {
+        return currentPercentageRepository.findTopByOrderByHourDesc();
     }
-    @PostMapping("/usage")
-    public ResponseEntity<Void> receiveEnergyUsage(@RequestBody EnergyUsage usage) {
-        energyService.addEnergyUsage(usage);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
-        //make feedback to the user
-        //return ResponseEntity.ok("Usage received");
-        //return ResponseEntity.status(HttpStatus.CREATED).body("Usage received");
-    }
-
 
     @GetMapping("/historical")
-    public ResponseEntity<List<EnergyUsage>> getHistorical(
+    public EnergyHistory historyEnergy(
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end
     ) {
-        return ResponseEntity.ok(energyService.getHistoricalUsage(start, end));
+        List<Object[]> results = energyHistoryRepository.sumHistoricalByDateRange(start, end);
+
+        Object[] result = results.get(0);
+        double communityProduced = result[0] != null ? ((Number) result[0]).doubleValue() : 0.0;
+        double communityUsed     = result[1] != null ? ((Number) result[1]).doubleValue() : 0.0;
+        double gridUsed          = result[2] != null ? ((Number) result[2]).doubleValue() : 0.0;
+
+        // Construct and return a new EnergyHistorical DTO with the summed values
+        return new EnergyHistory(start, communityProduced, communityUsed, gridUsed);
     }
 }
