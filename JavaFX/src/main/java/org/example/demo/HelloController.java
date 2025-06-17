@@ -35,24 +35,6 @@ import java.util.Map;public class HelloController {
     private Label totalUsedLabel;
     @FXML
     private Label totalGridLabel;
-    @FXML
-    private TableView<Map<String, String>> tableView;
-    @FXML
-    private TableColumn<Map<String, String>, String> hourColumn;
-    @FXML
-    private TableColumn<Map<String, String>, String> producedColumn;
-    @FXML
-    private TableColumn<Map<String, String>, String> usedColumn;
-    @FXML
-    private TableColumn<Map<String, String>, String> gridColumn;
-
-    @FXML
-    public void initialize() {
-        hourColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().get("hour")));
-        producedColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().get("communityProduced")));
-        usedColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().get("communityUsed")));
-        gridColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().get("gridUsed")));
-    }
 
     @FXML
     private void onFetchClicked() {
@@ -115,7 +97,6 @@ import java.util.Map;public class HelloController {
                             double finalGrid = totalGrid;
 
                             Platform.runLater(() -> {
-                                tableView.getItems().setAll(list);
                                 totalProducedLabel.setText("Gesamt produziert: " + finalProduced + " kWh");
                                 totalUsedLabel.setText("Gesamt verbraucht: " + finalUsed + " kWh");
                                 totalGridLabel.setText("Gesamt Grid: " + finalGrid + " kWh");
