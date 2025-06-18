@@ -29,9 +29,9 @@ public class Main {
             while (true) {
                 LocalDateTime timestamp = LocalDateTime.now();
                 String timeString = timestamp.format(isoFormatter);
-                double producedKwh = calculateOutput(timestamp.getHour());
+                double usedKwh = calculateOutput(timestamp.getHour());
 
-                EnergyMessage message = new EnergyMessage("produce", "community", producedKwh, timeString);
+                EnergyMessage message = new EnergyMessage("usage", "community", usedKwh, timeString);
                 String payload = jsonMapper.writeValueAsString(message);
 
                 ch.basicPublish("", ROUTING_KEY, null, payload.getBytes(StandardCharsets.UTF_8));
