@@ -1,20 +1,22 @@
 package com.example.api.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 
 @Entity
+@Table(
+        name = "current_percentage",
+        uniqueConstraints = @UniqueConstraint(columnNames = "hour")
+)
 public class CurrentPercentage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(nullable = false)
     private LocalDateTime hour;
     private double communityDepleted;
     private double gridPortion;

@@ -4,27 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10a5df18-6e40-4f2c-9b5b-282db6158178" name="Changes" comment="usage-service">
-      <change afterPath="$PROJECT_DIR$/../percentage-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../percentage-service/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../percentage-service/.idea/git_toolbox_blame.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../percentage-service/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../percentage-service/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../percentage-service/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../percentage-service/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../percentage-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../percentage-service/src/main/java/com/example/JdbcConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../percentage-service/src/main/java/com/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../percentage-service/src/main/java/com/example/model/EnergyMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../percentage-service/src/main/java/com/example/model/PercentageMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+    <list default="true" id="10a5df18-6e40-4f2c-9b5b-282db6158178" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/JdbcConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/model/EnergyMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/model/PercentageMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../usage-service/.idea/git_toolbox_prj.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../API/src/main/java/com/example/api/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/java/com/example/api/DataInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../API/src/main/java/com/example/api/model/CurrentPercentage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/java/com/example/api/model/CurrentPercentage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../API/src/main/java/com/example/api/repository/CurrentPercentageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/java/com/example/api/repository/CurrentPercentageRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaFX/src/main/java/org/example/demo/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaFX/src/main/java/org/example/demo/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../producer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../producer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../usage-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../usage-service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../usage-service/src/main/java/com/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../usage-service/src/main/java/com/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../user/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,14 +52,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/haris/Desktop/FH/Semester 4/DISYS/Dav/usage-service/src/main/java/com/example/model",
+    "last_opened_file_path": "/Users/haris/Desktop/FH/Semester 4/DISYS/Dav/percentage-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -83,32 +81,12 @@
       <updated>1750184872829</updated>
       <workItem from="1750184873970" duration="162000" />
       <workItem from="1750247589437" duration="36000" />
-      <workItem from="1750247684670" duration="7675000" />
+      <workItem from="1750247684670" duration="1927000" />
+      <workItem from="1750250493977" duration="6398000" />
     </task>
-    <task id="LOCAL-00001" summary="usage-service">
-      <option name="closed" value="true" />
-      <created>1750250283067</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1750250283067</updated>
-    </task>
-    <task id="LOCAL-00002" summary="usage-service">
-      <option name="closed" value="true" />
-      <created>1750250313512</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1750250313512</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="usage-service" />
-    <option name="LAST_COMMIT_MESSAGE" value="usage-service" />
   </component>
 </project>

@@ -61,7 +61,6 @@ public class Main {
             LocalDateTime ts = LocalDateTime.parse(msg.getDatetime());
             LocalDateTime hourKey = ts.withMinute(0).withSecond(0).withNano(0);
 
-            // 1) Vorhandenen Datensatz abfragen
             String select = "SELECT id, community_produced, community_used, grid_used "
                     + "FROM energy_history WHERE hour = ?";
             long id;
@@ -76,7 +75,6 @@ public class Main {
                         used     = rs.getDouble("community_used");
                         grid     = rs.getDouble("grid_used");
                     } else {
-                        // 2) Wenn nicht existiert, anlegen
                         String ins = "INSERT INTO energy_history(hour, community_produced, community_used, grid_used) "
                                 + "VALUES (?, 0, 0, 0) RETURNING id";
                         try (PreparedStatement insPs = db.prepareStatement(ins)) {
@@ -91,7 +89,6 @@ public class Main {
                 }
             }
 
-            // 3) Werte aktualisieren
             double newUsed  = used + msg.getKwh();
             double overflow = Math.max(0, newUsed - produced);
             double finalUsed = Math.min(newUsed, produced);
@@ -112,8 +109,8 @@ public class Main {
             rec.setCommunityUsed(finalUsed);
             rec.setGridUsed(finalGrid);
 
-            System.out.printf("[Consumption] %s → used=%.2f kWh, grid=%.2f kWh%n",
-                    hourKey, finalUsed, finalGrid);
+            System.out.printf("\n[Consumption] %s → used=%.2f kWh%n",
+                    hourKey, msg.getKwh());
             return rec;
 
         } catch (Exception e) {
@@ -127,10 +124,13 @@ public class Main {
             LocalDateTime ts = LocalDateTime.parse(msg.getDatetime());
             LocalDateTime hourKey = ts.withMinute(0).withSecond(0).withNano(0);
 
-            // 1) Datensatz abfragen
-            String select = "SELECT id, community_produced FROM energy_history WHERE hour = ?";
+            String select = """
+                SELECT id, community_produced, community_used, grid_used
+                  FROM energy_history
+                 WHERE hour = ?
+            """;
             long id;
-            double produced;
+            double produced, used, grid;
 
             try (PreparedStatement ps = db.prepareStatement(select)) {
                 ps.setObject(1, hourKey);
@@ -138,10 +138,17 @@ public class Main {
                     if (rs.next()) {
                         id       = rs.getLong("id");
                         produced = rs.getDouble("community_produced");
+                        used     = rs.getDouble("community_used");
+                        grid     = rs.getDouble("grid_used");
                     } else {
-                        // 2) Anlegen, wenn nicht vorhanden
-                        String ins = "INSERT INTO energy_history(hour, community_produced, community_used, grid_used) "
-                                + "VALUES (?, 0, 0, 0) RETURNING id";
+                        String ins = """
+                            INSERT INTO energy_history(hour,
+                                                       community_produced,
+                                                       community_used,
+                                                       grid_used)
+                                 VALUES (?, 0, 0, 0)
+                             RETURNING id
+                        """;
                         try (PreparedStatement insPs = db.prepareStatement(ins)) {
                             insPs.setObject(1, hourKey);
                             try (ResultSet keys = insPs.executeQuery()) {
@@ -150,13 +157,18 @@ public class Main {
                             }
                         }
                         produced = 0;
+                        used     = 0;
+                        grid     = 0;
                     }
                 }
             }
 
-            // 3) Produktion erhöhen
             double newProd = produced + msg.getKwh();
-            String upd = "UPDATE energy_history SET community_produced = ? WHERE id = ?";
+            String upd = """
+                UPDATE energy_history
+                   SET community_produced = ?
+                 WHERE id = ?
+            """;
             try (PreparedStatement upPs = db.prepareStatement(upd)) {
                 upPs.setDouble(1, newProd);
                 upPs.setLong(2, id);
@@ -166,10 +178,11 @@ public class Main {
             PercentageMessage rec = new PercentageMessage();
             rec.setHour(hourKey);
             rec.setCommunityProduced(newProd);
-            rec.setCommunityUsed(0);
-            rec.setGridUsed(0);
+            rec.setCommunityUsed(used);
+            rec.setGridUsed(grid);
 
-            System.out.printf("[Production]  %s → produced=%.2f kWh%n", hourKey, newProd);
+            System.out.printf("\n[Production] %s → produced=%.2f kWh%n",
+                    hourKey, msg.getKwh());
             return rec;
 
         } catch (Exception e) {
