@@ -3,10 +3,9 @@ package org.example.demo;
 import javafx.scene.control.Button;
 
 import javafx.application.Platform;
-import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.URI;
@@ -14,10 +13,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;public class HelloController {
+public class HelloController {
 
     @FXML
     private Button fetchButton;
@@ -61,48 +57,18 @@ import java.util.Map;public class HelloController {
                     .thenApply(HttpResponse::body)
                     .thenAccept(response -> {
                         try {
-                            JSONArray array;
-                            if (response.trim().startsWith("[")) {
-                                array = new JSONArray(response);
-                            } else {
-                                array = new JSONArray();
-                                array.put(new JSONObject(response));
-                            }
+                            JSONObject obj = new JSONObject(response);
 
-                            List<Map<String, String>> list = new ArrayList<>();
-                            double totalProduced = 0;
-                            double totalUsed = 0;
-                            double totalGrid = 0;
-
-                            for (int i = 0; i < array.length(); i++) {
-                                JSONObject obj = array.getJSONObject(i);
-                                double produced = obj.getDouble("communityProduced");
-                                double used = obj.getDouble("communityUsed");
-                                double grid = obj.getDouble("gridUsed");
-
-                                totalProduced += produced;
-                                totalUsed += used;
-                                totalGrid += grid;
-
-                                Map<String, String> row = new HashMap<>();
-                                row.put("hour", obj.getString("hour"));
-                                row.put("communityProduced", String.valueOf(produced));
-                                row.put("communityUsed", String.valueOf(used));
-                                row.put("gridUsed", String.valueOf(grid));
-                                list.add(row);
-                            }
-
-                            double finalProduced = totalProduced;
-                            double finalUsed = totalUsed;
-                            double finalGrid = totalGrid;
+                            double sumProduced = obj.optDouble("communityProduced", 0.0);
+                            double sumUsed     = obj.optDouble("communityUsed",    0.0);
+                            double sumGrid     = obj.optDouble("gridUsed",         0.0);
 
                             Platform.runLater(() -> {
-                                totalProducedLabel.setText("Gesamt produziert: " + finalProduced + " kWh");
-                                totalUsedLabel.setText("Gesamt verbraucht: " + finalUsed + " kWh");
-                                totalGridLabel.setText("Gesamt Grid: " + finalGrid + " kWh");
+                                totalProducedLabel.setText("Community Produktion: " + sumProduced + " kWh");
+                                totalUsedLabel.setText(    "Community Verbrauch: " + sumUsed     + " kWh");
+                                totalGridLabel.setText(    "Grid Verbrauch: "      + sumGrid    + " kWh");
                             });
-
-                        } catch (Exception e) {
+                        } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     });

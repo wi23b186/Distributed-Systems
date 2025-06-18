@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="53734989-0abc-46a4-8f50-5181d299f280" name="Changes" comment="add comments to energy-producer code">
+      <change beforePath="$PROJECT_DIR$/../API/src/main/java/com/example/api/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/java/com/example/api/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/src/main/java/com/example/api/model/CurrentPercentage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/java/com/example/api/model/CurrentPercentage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/src/main/java/com/example/api/model/EnergyHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/java/com/example/api/model/EnergyHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaFX/src/main/java/org/example/demo/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaFX/src/main/java/org/example/demo/HelloController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2xawCrHlPM2ce46oBrjPB5FG15I" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.energy-producer.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/haris/Desktop/FH/Semester 4/DISYS/Dav/producer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="energy-producer" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="com.example.Main" />
+      <module name="producer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="53734989-0abc-46a4-8f50-5181d299f280" name="Changes" comment="" />
+      <created>1748189368069</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748189368069</updated>
+      <workItem from="1748189369158" duration="9446000" />
+      <workItem from="1748336996845" duration="1448000" />
+      <workItem from="1748861171919" duration="1322000" />
+      <workItem from="1749645472037" duration="2021000" />
+      <workItem from="1750060767440" duration="4652000" />
+      <workItem from="1750185426061" duration="1139000" />
+    </task>
+    <task id="LOCAL-00001" summary="change energy producer and user message interval">
+      <option name="closed" value="true" />
+      <created>1750062660775</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1750062660775</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add comments to energy-producer code">
+      <option name="closed" value="true" />
+      <created>1750063644611</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1750063644611</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change energy producer and user message interval" />
+    <MESSAGE value="add comments to energy-producer code" />
+    <option name="LAST_COMMIT_MESSAGE" value="add comments to energy-producer code" />
+  </component>
+</project>
