@@ -4,11 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53734989-0abc-46a4-8f50-5181d299f280" name="Changes" comment="add comments to energy-producer code">
-      <change beforePath="$PROJECT_DIR$/../API/src/main/java/com/example/api/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/java/com/example/api/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/src/main/java/com/example/api/model/CurrentPercentage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/java/com/example/api/model/CurrentPercentage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/src/main/java/com/example/api/model/EnergyHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/java/com/example/api/model/EnergyHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaFX/src/main/java/org/example/demo/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaFX/src/main/java/org/example/demo/HelloController.java" afterDir="false" />
+    <list default="true" id="53734989-0abc-46a4-8f50-5181d299f280" name="Changes" comment="user">
+      <change afterPath="$PROJECT_DIR$/../usage-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../usage-service/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../usage-service/.idea/git_toolbox_blame.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../usage-service/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../usage-service/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../usage-service/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../usage-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../usage-service/src/main/java/com/example/JdbcConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../usage-service/src/main/java/com/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../usage-service/src/main/java/com/example/model/EnergyMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../usage-service/src/main/java/com/example/model/PercentageMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cook-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cook-service/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cook-service/.idea/git_toolbox_blame.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cook-service/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cook-service/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cook-service/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cook-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cook-service/src/main/java/at/technikum/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,23 +51,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.energy-producer.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/haris/Desktop/FH/Semester 4/DISYS/Dav/producer&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.energy-producer.executor": "Run",
+    "Application.user.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/haris/Desktop/FH/Semester 4/DISYS/Dav/user",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="user" type="Application" factoryName="Application" singleton="false">
       <option name="MAIN_CLASS_NAME" value="com.example.Main" />
@@ -76,6 +92,7 @@
       <workItem from="1749645472037" duration="2021000" />
       <workItem from="1750060767440" duration="4652000" />
       <workItem from="1750185426061" duration="1139000" />
+      <workItem from="1750246956231" duration="1182000" />
     </task>
     <task id="LOCAL-00001" summary="change energy producer and user message interval">
       <option name="closed" value="true" />
@@ -93,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750063644611</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="user">
+      <option name="closed" value="true" />
+      <created>1750247312751</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1750247312751</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +127,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change energy producer and user message interval" />
     <MESSAGE value="add comments to energy-producer code" />
-    <option name="LAST_COMMIT_MESSAGE" value="add comments to energy-producer code" />
+    <MESSAGE value="user" />
+    <option name="LAST_COMMIT_MESSAGE" value="user" />
   </component>
 </project>
