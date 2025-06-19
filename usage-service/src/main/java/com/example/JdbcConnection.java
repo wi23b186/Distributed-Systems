@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class JdbcConnection {
 
     private static final String URL =
-            "jdbc:postgresql://localhost:5432/disysdb?user=disysuser&password=disyspw";
+            "jdbc:postgresql://localhost:5432/energy?user=disysuser&password=disyspw";
 
     public static Connection open() throws SQLException {
         return DriverManager.getConnection(URL);

@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10a5df18-6e40-4f2c-9b5b-282db6158178" name="Changes" comment="usage-service">
-      <change beforePath="$PROJECT_DIR$/../.idea/Distributed-Systems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Distributed-Systems.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaFX/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaFX/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaFX/src/main/java/org/example/demo/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaFX/src/main/java/org/example/demo/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../percentage-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../percentage-service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../producer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../producer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/JdbcConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/JdbcConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,7 @@
       <workItem from="1750184873970" duration="162000" />
       <workItem from="1750247589437" duration="36000" />
       <workItem from="1750247684670" duration="7675000" />
-      <workItem from="1750339613772" duration="1013000" />
+      <workItem from="1750339613772" duration="1194000" />
     </task>
     <task id="LOCAL-00001" summary="usage-service">
       <option name="closed" value="true" />

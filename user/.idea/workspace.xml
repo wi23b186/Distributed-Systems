@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53734989-0abc-46a4-8f50-5181d299f280" name="Changes" comment="user">
-      <change beforePath="$PROJECT_DIR$/../.idea/Distributed-Systems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Distributed-Systems.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaFX/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaFX/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JavaFX/src/main/java/org/example/demo/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaFX/src/main/java/org/example/demo/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../percentage-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../percentage-service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../producer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../producer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../usage-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../usage-service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../usage-service/src/main/java/com/example/JdbcConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../usage-service/src/main/java/com/example/JdbcConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,7 @@
       <workItem from="1750060767440" duration="4652000" />
       <workItem from="1750185426061" duration="1139000" />
       <workItem from="1750246956231" duration="4897000" />
-      <workItem from="1750339628993" duration="905000" />
+      <workItem from="1750339628993" duration="1033000" />
     </task>
     <task id="LOCAL-00001" summary="change energy producer and user message interval">
       <option name="closed" value="true" />
