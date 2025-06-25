@@ -1,45 +1,50 @@
-# Distributed-Systems
-Projekt Distributed Systems
-GitHub-Link: https://github.com/wi23b186/Distributed-Systems
+# Distributed Energy Management System – Komponentenübersicht
 
-Ordnerstruktur:
-Distributed-Systems/
-│
-├── JavaFX/src/main/
-│   ├── java/
-│   │   └──module-info.java
-│   ├── /resources/org/edxample/demo/
-│   │   └──hello-view.fxml
-│   ├── java/org/example/demo/
-│   │   └──HelloApplication.java
-│   │   └──HelloController.java
-│
-├── API/src/
-│   ├── main/java/com/example/api/controller/
-│   │   └── EnergyController.java
-│   ├── main/java/com/example/api/model/
-│   │   ├── CurrentPercentage.java
-│   │   └── EnergyHistory.java
-│   ├── main/java/com/example/api/repository/
-│   │   ├── CurrentPercentageRepository.java
-│   │   └── EnergyHistoryRepository.java
-│   ├── main/java/com/example/api/DataInitializer.java
-│   └── main/java/com/example/api/Application.java
-│
-├── producer/src/main/java/com/example/
-│   ├── Main.java
-│   └── model/EnergyMessage.java
-│
-├── user/src/main/java/com/example/
-│   ├── Main.java
-│   └── model/EnergyMessage.java
-│
-├── usage-service/src/main/java/com/example/
-│   ├── Main.java
-│   ├── JdbcConnection.java
-│   └── model/PercentageMessage.java
-│
-├── percentage-service/src/main/java/com/example/
-│   ├── Main.java
-│   ├── JdbcConnection.java
-│   └── model/PercentageMessage.java
+Dieses Projekt bildet ein verteiltes Energiemanagementsystem ab, das verschiedene Softwarekomponenten nutzt, um Energiedaten von Produzenten und Konsumenten zu verarbeiten, zu speichern und anzuzeigen.
+
+ Komponentenübersicht
+ 
+ JavaFX GUI
+- Benutzeroberfläche zur Anzeige aktueller und historischer Energiedaten
+- Kommuniziert über REST mit dem Backend
+- Stellt Anfragen wie:
+  - GET /energy/current
+  - GET /energy/historical?start=...&end=...
+
+Spring Boot REST API
+- Backend-Service
+- Bietet REST-Endpunkte für die GUI
+- Liest Daten aus der PostgreSQL-Datenbank (z. B. Nutzungsdaten, Prozentwerte)
+
+ RabbitMQ
+- Message Broker für asynchrone Kommunikation
+- Leitet Nachrichten von:
+  - Energy Producer
+  - Energy User
+- An:
+  - Usage Service
+  - Current Percentage Service
+
+Usage Service
+- Verarbeitet generierten daten 
+- Empfängt Nachrichten über RabbitMQ
+- Aktualisiert die history-Tabelle in PostgreSQL
+
+
+Current Percentage Service
+- Empfängt Nachrichten über RabbitMQ
+- Berechnet und speichert prozentuale Verteilungen
+- Aktualisiert die Current percentage -Tabelle in PostgreSQL
+
+ PostgreSQL
+- Zentrale Datenbank
+- Enthält Tabellen für:
+  - Energieverbrauch („usage“)
+  - Energieanteile („percentage“)
+- Wird sowohl schreibend von Services als auch lesend von der REST-API verwendet
+
+Energy Producer / Energy User
+- Simulieren Datenquellen
+- Senden Energie-Nachrichten an RabbitMQ
+  - Producer → z. B. erzeugte Energie
+  - User → z. B. verbrauchte Energie
