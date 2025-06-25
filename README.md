@@ -23,7 +23,10 @@ Spring Boot REST API
   - Energy User
 - An:
   - Usage Service
-  - Current Percentage Service
+- Leitet Nachrichten von:
+  - Usage Service
+- An:
+   -percentage Service
 
 Usage Service
 - Verarbeitet generierten daten 
